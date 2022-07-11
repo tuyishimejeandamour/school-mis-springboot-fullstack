@@ -1,6 +1,7 @@
 package com.example.clientui.api;
 
 import com.example.clientui.output.ApiResponse;
+import com.example.clientui.output.JwtAuthenticationResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,7 +30,7 @@ public class Auth {
         System.out.println(signIn.getPassword());
         System.out.println("=======================");
 
-        ResponseEntity<ApiResponse> res = restTemplate.postForEntity("http://localhost:4000/api/v1/auth/signin", requestBody, ApiResponse.class);
+        ResponseEntity<JwtAuthenticationResponse> res = restTemplate.postForEntity("http://localhost:4000/api/v1/auth/signin", requestBody, JwtAuthenticationResponse.class);
 
 
         System.out.println("=======================");
